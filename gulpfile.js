@@ -24,12 +24,12 @@ function sassTask () {
 }
 
 function jsTask () {
-  return src('gulp-site-model/src/**/**/*.js')
+  return src('./src/**/**/*.js')
     .pipe(sourcemaps.init())
     .pipe(concat('index.min.js'))
     .pipe(terser())
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('gulp-site-model/dest/'))
+    .pipe(dest('./dest/'))
 }
 
 function listen() {

@@ -11,7 +11,7 @@ Assim que o projeto estiver na maquina iniciar o mesmo com:
 - yarn start
 
 O mesmo inicia o Gulp com as tasks 
-- jsTask 
+- jsTask
 - sassTask
 - listen
 
