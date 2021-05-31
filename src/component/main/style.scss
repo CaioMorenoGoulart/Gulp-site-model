@@ -1,5 +1,6 @@
 body {
   main {
+    //Side Bar
     .side-bar {
       .side-bar-left, .side-bar-right {
         position: fixed;
@@ -50,10 +51,20 @@ body {
               }
             }
             button {
-              display: none;
+              opacity: 0;
+              visibility: hidden;
               background-color: transparent;
               border: none;
+              padding: 0;
+              height: 0;
+              margin: 0;
+              cursor: pointer;
               transition: 0.2s;
+              img {
+                width: 34px;
+                height: 0;
+                transition: 0.2s;
+              }
             }
           }
           .icons-top {
@@ -62,53 +73,76 @@ body {
         }
       }
     }
+    .side-bar.scrolled {
+      .side-bar-left{
+        .icons{
+          .icons-down{
+            button {
+              opacity: 1;
+              visibility: visible;
+              transition: 0.2s;
+              height: unset;
+              margin: 10px auto;
+              img {
+                height: 34px;
+                transition: 0.2s;
+              }
+            }
+          }
+        }
+      }
+    }
+    //Side Bar - Fim
+
     .boxes {
-      display: flex;
-      flex-direction: column;
-
-      width: 100%;
-      height: 100vh;
-
-      margin: 0px;
-
+      margin: 69px 69px 0 69px;
+      //Banner
       .banner {
-        margin: 69px 69px 0 69px;
         position: relative;
         &__wrapper {
           display: flex;
           flex-direction: column;
-          justify-content: flex-start;
+          justify-content: space-between;
           align-items: flex-start;
           width: 100%;
-          height: 100%;
-          min-height: 682px;
-          height: calc(100vh - 69px);
+          min-height: calc(100vh - 69px);
           background-size: cover;
           background-image: url(/src/img/fullbanner-e-commerce-certo-bg.png);
           background-repeat: no-repeat;
           background-position-x: center;
           background-position-y: 0;
-          background-color: rgb(12, 23, 41)
+          &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0, .5);
+            z-index: 0;
+          }
         }
         .text-box-top {
           margin: 70px 70px 0 70px;
+          z-index: 0;
           h3 {
-            &:first-child {
-              font-family: 'Permanent Marker', sans-serif;
-              font-weight: 400;
-              font-size: 50px;
-            }
             font-family: 'Permanent Marker', sans-serif;
             font-weight: 400;
             font-size: 100px;
             line-height: 70px;
             color: #FF9356;
+            &:first-child {
+              font-family: 'Permanent Marker', sans-serif;
+              font-weight: 400;
+              font-size: 50px;
+            }
           }
           p {
             margin-top: 40px;
             max-width: 500px;
             font-size: 18px;
-            font-family: 'Roboto', sans-serif;
+            
             font-weight: 400;
             color: #D5D5D5;
           }
@@ -123,21 +157,13 @@ body {
         .text-box-down {
           display: flex;
           justify-content: flex-start;
-          margin: 180px 0 0 70px;
-
+          margin: 20px 0 70px 70px;
+          z-index: 0;
           #orc {
-            width: 163px;
-            height: 38px;
+
             margin-right: 25px;
             background-color: #FF5656;
-            color: white;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 500;
-            font-size: 16px;
             border: none;
-            border-radius: 2px;
-            transition: 0.2s;
-            cursor: pointer;
 
             &:hover {
               background-color: rgba(255, 86, 86, 0.75);
@@ -145,17 +171,10 @@ body {
             }
           }
           #duvidas {
-            width: 163px;
-            height: 38px;
+
             background-color: transparent;
-            color: white;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 500;
-            font-size: 16px;
             border: 2px solid #FF9356;
             border-radius: 2px;
-            transition: 0.2s;
-            cursor: pointer;
            
             &:hover {
               background-color: #FF9356;
@@ -163,13 +182,165 @@ body {
           }
           }
         }
-      .img-rigth {
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
+      }
+    }
+    //Banner - Fim
+    //Serviços
+    .servicos {
+      margin: 40px 70px 58px 70px;
+      &__container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      &__wrapper {
+        width: 100%;
+      }
+      &__title {
+        font-family: 'Permanent Marker', sans-serif;
+        font-size: 40px;
+        font-weight: 400;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      &__opcoes {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      &__itens {
+        padding: 10px;
+        margin: 10px 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 249px;
+        min-width: 249px;
+
+        &--4 {
+          .servicos__itemTitle {
+            margin-top: 9px;
+            text-align: center;
+          }
+          .servicos__itemText {
+            margin: 9px 0 auto 0;
+          }
+        }
+      }
+      &__img {
+        margin-top: 5px;
+        display: block;
+        text-align: center;
+      }
+      &__itemTitle {
+        text-align: center;
+        margin-top: 20px;
+        
+        font-size: 18px;
+        font-weight: 700;
+      }
+      &__itemText {
+        margin: 20px 0 auto 0;
+        
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 22px;
+        text-align: justify;
+      }
+      &__footer {
+        margin-top: 27px;
+        
+        font-size: 16px;
+        font-weight: 300;
+        text-align: center;
+      }
+    }
+    //Serviços - Fim
+    // Nossa missão
+    .mission {
+      position: relative;
+      background-color: #000;
+      padding: 50px 0 65px 0;
+      &__container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 58px;
+        &::before {
+          content: '';
+          width: 0;
+          height: 0;
+          margin: 0 auto;
+          border-top: 50px solid #fff;
+          border-right: calc(100vw - 138px) solid transparent;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+        }
+        &::after {
+          content: '';
+          width: 0;
+          height: 0;
+          margin: 0 auto;
+          border-bottom: 50px solid #fff;
+          border-left: calc(100vw - 138px) solid transparent;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 0;
+        }
+      }
+      &__title {
+        margin: 37px 0;
+        font-family: 'Permanent Marker', sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        color: #ffffff;
+      }
+      &__boxTexts {
+        max-width: 715px;
+        margin-bottom: 30px;
+        
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        color: #FFFFFF;
+        p {
+          margin-bottom: 24px;
+        }
+      }
+      &__buttons {
+        display: flex;
+        margin-bottom: 43px;
+      }
+      &__contratar {
+
+            margin-right: 25px;
+            background-color: #FF9356;
+            border-radius: 2px;
+
+            &:hover {
+              background-color: rgba(255, 147, 86, 0.75);
+              color: rgba(255, 255, 255, 0.75);
+            }
+      }
+      &__duvidas {
+
+        background-color: transparent;
+        border: 2px solid #FF9356;
+        border-radius: 2px;
+       
+        &:hover {
+          background-color: #FF9356;
+          color: rgba(255, 255, 255, 0.75);
       }
       }
     }
+    // Nossa missão -Fim
+    // Responsivo
     @media (max-width: 991px) {
       .side-bar {
         .side-bar-right {
@@ -184,9 +355,30 @@ body {
             left: -70px;
             transition: 0.2s;
           }
+          .icons {
+            .icons-top, .icons-down {
+              a{
+                &:hover {
+                  background-color: unset;
+                }
+              }  
+            }
+          }
         }
       } 
+      .side-bar.scrolled {
+        .side-bar-left{
+          .icons{
+            .icons-down{
+              button {
+                display: none;
+              }
+            }
+          }
+        }
+      }
       .boxes {
+        margin: 0;
         .banner {
           margin: 69px 0 0 0;
           .text-box-top {
@@ -200,11 +392,31 @@ body {
               }
             }
             p {
-            max-width: 400px;
+              max-width: 400px;
             }
+          }
+          .text-box-down {
+            margin: 20px 0 150px 20px;
           }
         .img-rigth {
           display: none;
+        }
+        }
+      }
+      .servicos {
+        &__title {
+          font-size: 28px;
+        }
+      }
+      .mission {
+        margin-top: 20px;
+        &__wrapper {
+          flex-wrap: wrap-reverse;
+          &::before {
+            border-right:100vw solid transparent;
+          }
+          &::after {
+            border-left:100vw solid transparent;
         }
         }
       }
@@ -230,12 +442,31 @@ body {
               }
             }
             .text-box-down {
-              margin: 70px auto 0 20px;
               #orc, #duvidas {
                 width: 130px;
                 font-size: 12px;
               }
             }
+          }
+        }
+        .servicos {
+          &__title {
+            font-size: 21px;
+          }
+        }
+        .mission {
+          &__wrapper {
+            margin: 0 20px;
+          }
+          &__right{
+            img {
+              width: 260px;
+              height: 260px;
+            }
+          }
+          &__contratar, &__duvidas {
+            width: 128px;
+            height: 38px;
           }
         }
       }
@@ -249,17 +480,30 @@ body {
         }
       }
     }
+    // Responsivo - Fim
+  // links
+    #orc, #duvidas, .mission__contratar, .mission__duvidas{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 163px;
+      height: 38px;
+      color: white;
+      
+      font-weight: 500;
+      font-size: 16px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
   }
 }
 body.open-menu {
-  main {
-    .side-bar {
-      @media (max-width: 991px) {
-        .side-bar-left {
+  .side-bar{
+    @media (max-width: 991px) {
+      .side-bar-left {
+        left: 0;
+        .lobo {
           left: 0;
-          .lobo {
-            left: 0;
-          }
         }
       }
     }

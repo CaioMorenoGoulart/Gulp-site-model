@@ -4,6 +4,8 @@ body {
     width: 100%;
     height: 70px;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1;
 
     .box {
@@ -78,6 +80,9 @@ body {
                 }
                 a {
                   font-size: 18px;
+                  &:hover {
+                    background-color: unset;
+                  }
                 }
               }
             }
