@@ -21,4 +21,6 @@ O mesmo inicia o Gulp com as tasks
 - default   _que é a padrão start_
 - compilaSass _apenas para converter o sass em css_
 
+- Acesso ao site finalizado em: https://kclan.com.br/
+
 develop by: Caio Moreno Goulart
