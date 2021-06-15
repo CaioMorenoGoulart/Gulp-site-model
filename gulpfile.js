@@ -38,6 +38,8 @@ function imgTask () {
     src('./src/img/**/*.svg') 
     .pipe(dest('./deploy/src/img/')),
     src('./src/img/**/*.png')
+    .pipe(dest('./deploy/src/img/')),
+    src('./src/img/**/*.webp')
     .pipe(dest('./deploy/src/img/'))
     )
 }
@@ -61,5 +63,5 @@ exports.jsTask = jsTask;
 exports.sassTask = sassTask;
 exports.htmlTask = htmlTask;
 exports.imgTask= imgTask;
-exports.default = series(jsTask, sassTask, listen);
+exports.default = series(jsTask, sassTask, listen, imgTask);
 exports.build = series(jsTask, sassTask, htmlTask, imgTask);

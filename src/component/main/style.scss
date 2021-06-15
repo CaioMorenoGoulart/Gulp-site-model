@@ -107,7 +107,7 @@ body {
           width: 100%;
           min-height: calc(100vh - 69px);
           background-size: cover;
-          background-image: url(/src/img/fullbanner-e-commerce-certo-bg.png);
+          background-image: url(/src/img/fullbanner-e-commerce-certo-bg.webp);
           background-repeat: no-repeat;
           background-position-x: center;
           background-position-y: 0;
@@ -341,7 +341,24 @@ body {
     }
     // Nossa missão -Fim
     // Responsivo
+    @media (max-width: 1280px) {
+      .boxes {
+        .banner {
+          &__wrapper {
+            background-image: url(/src/img/fullbanner-e-commerce-certo-bg-full-hd.webp);
+          }
+        }
+      }
+    }
     @media (max-width: 991px) {
+      .boxes {
+        .banner {
+          &__wrapper {
+            background-image: url(/src/img/fullbanner-e-commerce-certo-bg-m.webp);
+          }
+        }
+      }
+
       .side-bar {
         .side-bar-right {
           right: -70px;
@@ -465,17 +482,8 @@ body {
             }
           }
           &__contratar, &__duvidas {
-            width: 128px;
+            width: 136px;
             height: 38px;
-          }
-        }
-      }
-    }
-    @media (min-width: 1281px) {
-      .boxes{
-        .banner{
-          &__wrapper {
-            
           }
         }
       }

@@ -18,8 +18,8 @@ body {
       .xburguer {
         display: none;
       }
-      .klan {
-        margin-left: 70px;
+      .kclan {
+        margin-left: 90px;
         transition: 0.2s;
       }
     }
@@ -56,8 +56,8 @@ body {
     }
     @media (max-width: 991px) {
       .box {
-        .klan {
-          margin-left: 0;
+        .kclan {
+          margin-left: 20px;
           transition: 0.2s;
         }
         .menu{
@@ -120,8 +120,8 @@ body {
 body.open-menu {    
   @media (max-width: 991px) {
     .box {
-      .klan {
-        margin-left: 70px;
+      .kclan {
+        margin-left: 90px;
       } 
       .xburguer{
         left: 215px;
