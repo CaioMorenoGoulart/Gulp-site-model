@@ -121,6 +121,14 @@ body {
           align-items: flex-start;
           width: 100%;
           min-height: calc(100vh - 69px);
+          background-size: cover;
+          background-image: url(/src/img/fullbanner-e-commerce-certo-bg.webp);
+          background-repeat: no-repeat;
+          background-position-x: center;
+          background-position-y: 0;
+          &-ios {
+            background-image: url(/src/img/fullbanner-e-commerce-certo-bg.png);
+          }
           &::before {
             content: '';
             display: block;
@@ -351,36 +359,13 @@ body {
     }
     // Nossa missão -Fim
     // Responsivo
-    @media (max-width: 1367px) {
+    @media (min-width: 992px) and (max-width: 1920px) {
       .boxes {
         .banner{
-          .image{
-            img {
-              transform: translate(-50%, 0);
-              min-height: initial;
-              position: absolute;
-              z-index: -1;
-              top: 0;
-              left: 50%;
-              max-width: initial;
-            }
-          }
-        }
-      }
-    }
-    @media (min-width: 1920px) {
-      .boxes {
-        .banner{
-          .image{
-            img {
-              transform: translate(-50%, 0);
-              min-height: calc(100vh - 69px);
-              position: absolute;
-              z-index: -1;
-              top: 0;
-              left: 50%;
-              max-width: 100%;
-              max-height: initial;
+          &__wrapper{
+            background-image: url(/src/img/fullbanner-e-commerce-certo-bg-full-hd.webp);
+            &-ios {
+              background-image: url(/src/img/fullbanner-e-commerce-certo-bg-full-hd.png);
             }
           }
         }
@@ -402,15 +387,10 @@ body {
     @media (max-width: 991px) {
       .boxes {
         .banner{
-          .image {
-            img{
-              transform: translate(-50%, -50%);
-              min-height: initial;
-              position: absolute;
-              z-index: -1;
-              top: 50%;
-              left: 50%;
-              max-height: initial;
+          &__wrapper {
+            background-image: url(/src/img/fullbanner-e-commerce-certo-bg-m.webp);
+            &-ios {
+              background-image: url(/src/img/fullbanner-e-commerce-certo-bg-m.png);
             }
           }
         }
@@ -503,6 +483,7 @@ body {
       .boxes{  
         .banner {
           &__wrapper {
+
             .text-box-top {
               h3 {
                 font-size: 55px;

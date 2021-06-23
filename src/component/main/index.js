@@ -1,29 +1,33 @@
+if(/webOS|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+  $(".banner__wrapper").addClass("banner__wrapper-ios")
+  $(".mission__right img").attr("src", "/src/img/Kclan-logo.webp")
+}
 
-  $("#nossaMissao, #quemSomos").on('click', function(e) {
-    e.preventDefault();
-    var target = $(this).attr('href');
-    $('html, body').animate({
-      scrollTop: ($(target).offset().top)
-    }, 1000);
-  });
-  $("#servicostop").on('click', function(e) {
-    e.preventDefault();
-    var target = $(this).attr('href');
-    $('html, body').animate({
-      scrollTop: ($(target).offset().top)
-    }, 1000);
-  });
-  $("#contato").on('click', function(e) {
-    e.preventDefault();
-    var target = $(this).attr('href');
-    $('html, body').animate({
-      scrollTop: ($(target).offset().top)
-    }, 1000);
-  });
-  $("#topPage").on('click', function() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
 
+$("#nossaMissao, #quemSomos").on('click', function(e) {
+  e.preventDefault();
+  var target = $(this).attr('href');
+  $('html, body').animate({
+    scrollTop: ($(target).offset().top)
+  }, 1000);
+});
+$("#servicostop").on('click', function(e) {
+  e.preventDefault();
+  var target = $(this).attr('href');
+  $('html, body').animate({
+    scrollTop: ($(target).offset().top)
+  }, 1000);
+});
+$("#contato").on('click', function(e) {
+  e.preventDefault();
+  var target = $(this).attr('href');
+  $('html, body').animate({
+    scrollTop: ($(target).offset().top)
+  }, 1000);
+});
+$("#topPage").on('click', function() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
 var scrolll
 var tamanho
 
