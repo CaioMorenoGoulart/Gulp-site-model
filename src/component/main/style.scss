@@ -10,6 +10,7 @@ body {
         width: 70px;
         height: 100vh;
         transition: 0.2s;
+        overflow-y: auto;
       }
       .side-bar-right {
         right: 0;
@@ -70,6 +71,9 @@ body {
           .icons-top {
             margin-top: 200px;
           }
+          .icons-down {
+            margin-bottom: 55px;
+          }
         }
       }
     }
@@ -99,6 +103,17 @@ body {
       //Banner
       .banner {
         position: relative;
+        overflow: hidden;
+        .image {
+          img {
+            transform: translateX(-50%);
+            min-height: calc(100vh - 64px);
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 50%;
+          }
+        }
         &__wrapper {
           display: flex;
           flex-direction: column;
@@ -106,11 +121,6 @@ body {
           align-items: flex-start;
           width: 100%;
           min-height: calc(100vh - 69px);
-          background-size: cover;
-          background-image: url(/src/img/fullbanner-e-commerce-certo-bg.webp);
-          background-repeat: no-repeat;
-          background-position-x: center;
-          background-position-y: 0;
           &::before {
             content: '';
             display: block;
@@ -119,7 +129,7 @@ body {
             position: absolute;
             top: 0;
             left: 0;
-            background-color: rgba(0,0,0, .5);
+            background-color: rgba(0,0,0, .7);
             z-index: 0;
           }
         }
@@ -187,7 +197,7 @@ body {
     //Banner - Fim
     //Serviços
     .servicos {
-      margin: 40px 70px 58px 70px;
+      margin: 40px 0 58px 0;
       &__container {
         max-width: 1280px;
         margin: 0 auto;
@@ -341,24 +351,70 @@ body {
     }
     // Nossa missão -Fim
     // Responsivo
-    @media (max-width: 1280px) {
+    @media (max-width: 1367px) {
       .boxes {
-        .banner {
-          &__wrapper {
-            background-image: url(/src/img/fullbanner-e-commerce-certo-bg-full-hd.webp);
+        .banner{
+          .image{
+            img {
+              transform: translate(-50%, 0);
+              min-height: initial;
+              position: absolute;
+              z-index: -1;
+              top: 0;
+              left: 50%;
+              max-width: initial;
+            }
+          }
+        }
+      }
+    }
+    @media (min-width: 1920px) {
+      .boxes {
+        .banner{
+          .image{
+            img {
+              transform: translate(-50%, 0);
+              min-height: calc(100vh - 69px);
+              position: absolute;
+              z-index: -1;
+              top: 0;
+              left: 50%;
+              max-width: 100%;
+              max-height: initial;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 1279px) {
+      .boxes {
+        .servicos {
+          &__opcoes {
+            max-width: 806px;
+            margin: 0 auto;
+          }
+          &__footer {
+            margin: 27px 20px 0 20px;
           }
         }
       }
     }
     @media (max-width: 991px) {
       .boxes {
-        .banner {
-          &__wrapper {
-            background-image: url(/src/img/fullbanner-e-commerce-certo-bg-m.webp);
+        .banner{
+          .image {
+            img{
+              transform: translate(-50%, -50%);
+              min-height: initial;
+              position: absolute;
+              z-index: -1;
+              top: 50%;
+              left: 50%;
+              max-height: initial;
+            }
           }
         }
       }
-
       .side-bar {
         .side-bar-right {
           right: -70px;
@@ -399,7 +455,7 @@ body {
         .banner {
           margin: 69px 0 0 0;
           .text-box-top {
-            margin: 70px 0 0 20px;
+            margin: 70px 20px 0 20px;
             max-width: 100%;
             
             h3 {
@@ -413,7 +469,7 @@ body {
             }
           }
           .text-box-down {
-            margin: 20px 0 150px 20px;
+            margin: 20px 20px 150px 20px;
           }
         .img-rigth {
           display: none;
@@ -439,20 +495,26 @@ body {
       }
     }
     @media (max-width: 560px) {
+      .side-bar {
+        .side-bar-left {
+          max-height: 100vh;
+        }
+      }
       .boxes{  
         .banner {
           &__wrapper {
             .text-box-top {
               h3 {
-                font-size: 60px;
+                font-size: 55px;
                 line-height: 40px;
                 &:first-child {
-                  font-size: 21px;
+                  font-size: 20px;
                 }
               }
               p {
-                font-size: 12px;
-                max-width: 270px;
+                font-size: 16px;
+                max-width: 280px;
+                line-height: 26px;
               }
               h2 {
                 font-size: 22px;
@@ -460,8 +522,8 @@ body {
             }
             .text-box-down {
               #orc, #duvidas {
-                width: 130px;
-                font-size: 12px;
+                width: 127px;
+                font-size: 13px;
               }
             }
           }
@@ -510,6 +572,7 @@ body.open-menu {
     @media (max-width: 991px) {
       .side-bar-left {
         left: 0;
+        max-height: 100vh;
         .lobo {
           left: 0;
         }

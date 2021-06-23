@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
   $("#nossaMissao, #quemSomos").on('click', function(e) {
     e.preventDefault();
     var target = $(this).attr('href');
@@ -23,7 +23,6 @@ $(document).ready(function () {
   $("#topPage").on('click', function() {
     window.scrollTo({top: 0, behavior: 'smooth'});
   });
-});
 
 var scrolll
 var tamanho

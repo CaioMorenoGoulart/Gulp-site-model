@@ -73,13 +73,13 @@ body {
               flex-direction: column;
               align-items: flex-start;
               li {
-                margin-top: 20px;
-
+                margin: 10px 20px;
                 &:last-child {
                   margin-right: 20px;
                 }
                 a {
                   font-size: 18px;
+                  padding: 10px 20px;
                   &:hover {
                     background-color: unset;
                   }
