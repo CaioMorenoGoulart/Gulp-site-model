@@ -46,12 +46,38 @@
     </div>
   </header>
   <main>
+    <div class="popupmsg">
+      <button class="popupmsg__close">X</button>
+      <p class="popupmsg__sucesso">E-mail encaminhado com sucesso</p>
+      <form class="popupmsg__content" action="https://api.staticforms.xyz/submit" method="post">
+        <h3 class="popupmsg__titulo"></h3>
+        <div class="popupmsg__span">
+          <p class="popupmsg__spanName">Preencher campos obrigatórios*</p>
+          <p class="popupmsg__spanEmail">E-mail incorreto</p>
+        </div>
+        <p>Nome*</p>
+        <input class="popupmsg__assunto" type="text" name="$assunto">
+        <input class="popupmsg__name" type="text" name="name" placeholder="Nome do contato">
+        <p>E-mail*</p>
+        <input class="popupmsg__email" type="text" name="email" placeholder="E-mail para contato" />
+        <p>URL do seu site*</p>
+        <input class="popupmsg__site" type="text" name="$site" placeholder="Informe o link do seu site">
+        <p>Texto Breve (Opcional)</p>
+        <textarea name="message"></textarea>
+        <input type="text" name="honeypot" style="display:none">
+        <input type="hidden" name="accessKey" value="933a30e0-55df-4e88-83e9-ea0353a910ab">
+        <input type="hidden" name="subject" value="Contact us from - example.com" />
+        <input type="hidden" name="replyTo" value="@">
+        <input type="hidden" name="redirectTo" value="https://kclan.com.br/?form=success">
+        <input id="popupmsg" class="popupmsg__submit" type="submit" value="Encaminhar" />
+      </form>
+    </div>
     <div class="side-bar">
       <div class="side-bar-left">
         <img class="lobo" src="/src/img/icons/Lobo-logo.svg" alt="Lobo Kclan">
         <div class="icons">
           <div class="icons-top">
-            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5514997681292" target="_blank">
+            <a href="https://api.whatsapp.com/send?phone=+555514997681292&text=Olá, vim do seu site, pode me ajudar?" target="_blank">
               <img src="/src/img/icons/whatsapp.svg" alt="whatsapp">
             </a>
             <a href="mailto:contatokclan@gmail.com" target="_blank">
@@ -89,8 +115,8 @@
           </div>
           
           <div class="text-box-down">
-            <a id="orc" href="https://api.whatsapp.com/send?phone=5514997681292&text=Ol%C3%A1%2C%20entrei%20em%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20" target="_blank">Peça seu orçamento</a>
-            <a href="mailto:contatokclan@gmail.com" id="duvidas">Tire suas dúvidas</a>
+            <button id="orc" >Peça seu orçamento</button>
+            <button id="duvidas">Tire suas dúvidas</button>
           </div>
         </div>
       </div>
@@ -139,8 +165,8 @@
                 <p>Ao nos contratar você passa a ser um membro do nosso clã. Estamos ansiosos para ter você com a gente.</p>
               </div>
               <div class="mission__buttons">
-                <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5514997681292&&text=Ol%C3%A1%2C%20entrei%20em%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20" target="_blank" class="mission__contratar">Contratar</a>
-                <a href="mailto:contatokclan@gmail.com" class="mission__duvidas">Tire suas dúvidas</a>
+                <button class="mission__contratar">Contratar</button>
+                <button class="mission__duvidas">Tire suas dúvidas</button>
               </div>
             </div>
             <div class="mission__right">
@@ -159,7 +185,7 @@
             <h3>Entre em contato</h3>
           </div>
           <div class="contato__links">
-              <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5514997681292" target="_blank">
+              <a href="https://api.whatsapp.com/send?phone=+555514997681292&text=Olá vim do seu site, pode me ajudar?" target="_blank">
                 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0)">
                   <path d="M24.8016 20.2683L24.7888 20.3745C21.6735 18.8218 21.3477 18.615 20.9454 19.2185C20.6663 19.6364 19.8531 20.5842 19.6081 20.8647C19.3601 21.1409 19.1136 21.1622 18.6929 20.9709C18.2679 20.7584 16.9036 20.3122 15.2886 18.8672C14.0306 17.7409 13.1863 16.3597 12.937 15.9347C12.5219 15.2178 13.3903 15.1158 14.1808 13.6198C14.3225 13.3223 14.2502 13.0886 14.1454 12.8775C14.0391 12.665 13.1934 10.5825 12.8392 9.75233C12.4992 8.925 12.1493 9.02983 11.8872 9.02983C11.0712 8.959 10.4748 8.97033 9.94922 9.51717C7.66272 12.0303 8.2393 14.6228 10.1957 17.3797C14.0406 22.4117 16.0891 23.3382 19.8347 24.6245C20.8462 24.9461 21.7685 24.9008 22.4981 24.7959C23.3112 24.667 25.0013 23.7745 25.354 22.7758C25.7153 21.777 25.7153 20.9483 25.6091 20.757C25.5042 20.5658 25.2266 20.4595 24.8016 20.2683Z" fill="black"/>

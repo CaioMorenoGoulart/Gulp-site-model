@@ -1,5 +1,8 @@
 $("#hamburguer, .mask").click(function(){
-  $("body").toggleClass("open-menu")
+  $(".mask").fadeToggle("fast").addClass("mask__show")
+  if (!$(".mask__show--form").length){
+    $("body").toggleClass("open-menu")
+  }
 })
 if($(window).width() < 991) {
   $("#nossaMissao, #quemSomos, #servicostop, #contato").on('click', function() {

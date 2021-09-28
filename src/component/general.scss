@@ -18,12 +18,25 @@ body {
     left: 0;
     z-index: 1;
     display: none;
+    &__show {
+      display: initial;
+      &--form {
+        z-index: 3;
+        display: initial;
+      } 
+    }
   }
 }
 body.open-menu {    
   @media (max-width: 991px) {
     .mask {
       display: initial;
+      &__show {
+        &--form {
+          z-index: 3;
+          display: initial;
+        } 
+      }
     }
   }
 }
