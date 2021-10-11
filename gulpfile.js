@@ -8,8 +8,16 @@ var { init, reload } = require('browser-sync').create();
 var concat = require('gulp-concat');
 var terser = require('gulp-terser');
 var sass = require('gulp-sass');
+// var stylus = require('gulp-stylus');
 var htmlmin = require('gulp-htmlmin');
 
+// Task para stylus
+// function stylusTask () {
+//   return src('./src/**/**/*.kcl-style.min.css')
+//     .pipe(stylus({compress: true}))
+//     .pipe(concat('styl.css'))
+//     .pipe(dest('./deploy/src/css/component'))
+// }
 
 function sassTask () {
   return src('./src/**/**/*.scss')
@@ -51,6 +59,7 @@ function listen() {
     }
   });
   watch('./src/**/**/*.scss', sassTask)
+  // watch('./src/**/**/*.styl', stylusTask)
   watch('./src/**/**/*.js', jsTask)
   watch('./index.html', htmlTask)
   watch('./deploy/src/css/*.css').on('change', reload)
@@ -63,5 +72,6 @@ exports.jsTask = jsTask;
 exports.sassTask = sassTask;
 exports.htmlTask = htmlTask;
 exports.imgTask= imgTask;
+// exports.stylusTask= stylusTask;
 exports.default = series(jsTask, sassTask, listen, imgTask);
 exports.build = series(jsTask, sassTask, htmlTask, imgTask);
